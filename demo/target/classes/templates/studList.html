@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Table</title>
+    <!-- Add a link to a CSS file to style the table -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.4/dist/tailwind.min.css">
+    <style>
+  /* Add some spacing between the table cells */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  padding: 8px;
+}
+
+th {
+  text-align: left;
+}
+
+/* Add alternating row colors */
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Style the delete and update links as buttons */
+a {
+  display: inline-block;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+a:hover {
+  background-color: #3e8e41;
+}
+
+/* Style the table header */
+thead {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Add some shadow to the table */
+table {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+body{
+background-image:url("/img/download.jpg")
+
+}
+
+  
+    </style>
+</head>
+<body>
+    <h1>Student Table</h1>
+    <table class="table-auto">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Faculty</th>
+                <th>Department</th>
+                    <th>password</th>
+                <th>Amount</th>
+                 <th>delete</th>
+                <th>update</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Use Thymeleaf to loop through the list of students -->
+            <tr th:each="student : ${student}">
+                <td th:text="${student.id}"></td>
+                <td th:text="${student.name}"></td>
+                <td th:text="${student.faculty}"></td>
+                <td th:text="${student.department}"></td>
+                <td th:text="${student.password}"></td>
+                <td th:text="${student.amount}"></td>
+                 <td><a  th:href="@{deleteStud/{id}(id=${student.id})}">delete</a></td>
+                <td><a  th:href="@{updateStud/{id}(id=${student.id})}">update</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <a  th:href="@{/}">go to sign up</a>
+    <a  th:href="@{/adminPort}">admin</a>
+</body>
+</html>

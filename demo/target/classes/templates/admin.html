@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Admin Page</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <style >
+    
+    /* Global Styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Navbar Styles */
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #333;
+  height: 60px;
+  padding: 0 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.logout {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-left: 20px;
+}
+
+.logout:hover {
+  background-color: #e53935;
+  cursor: pointer;
+}
+
+/* Main Container Styles */
+
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+    
+    
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="#">Dashboard</a>
+      <a href="#">Manage Users</a>
+      <a href="#">Manage Products</a>
+      <a href="#">Settings</a>
+      <a href="#" class="logout">Logout</a>
+    </div>
+    <div class="main-container">
+      <h1>Welcome to the Admin Page</h1>
+      <p>Here you can manage your website's users and products.</p>
+    </div>
+  </body>
+</html>
